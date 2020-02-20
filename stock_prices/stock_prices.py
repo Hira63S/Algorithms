@@ -1,9 +1,21 @@
 #!/usr/bin/python
 
 import argparse
+# First, iterate through the list to find the maximum price
+# then, find the difference between that price and the minimum prices from all the prices
+# before it and then, find the highest profit
 
 def find_max_profit(prices):
-  pass
+
+    max_prof = [] # make a new array to save the profits in
+
+    for maximum in range(len(prices)):
+        for minimum in range(len(prices) - 1):
+            if maximum > minimum:
+                max_prof.append(prices[maximum] - prices[minimum])
+    max_profit = max(max_prof)
+
+    return max_profit
 
 
 if __name__ == '__main__':
