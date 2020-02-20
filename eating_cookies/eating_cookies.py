@@ -8,11 +8,13 @@ import sys
 def eating_cookies(n, cache=None):
     if n == 0:      # setting the base case here
         return 1
+    if n == 1:      # base cise of factorial i.e. if there is only one number of cookie, we get 1.
+        return 1
     elif n < 1:     # negative number of cookies
         return 0
-
-    else:           # finally, how can he eat the cookies? 
-        return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
+    elif n > 1:           # finally, how can he eat the cookies?
+        return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3) #+ eating_cookies(n-4)
+        # we apply the factorial function here. where n! = n * (n-1)!
 
 
 if __name__ == "__main__":

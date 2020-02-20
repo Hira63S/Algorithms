@@ -17,6 +17,17 @@ def find_max_profit(prices):
 
     return max_profit
 
+# another way to implement this:
+
+def max_profit(prices):
+    minimum = prices[0]                # set it at cursor 0
+    max_profit = prices[1] - minimum   # find the maximum profit by subtraction
+    for i in range(0, len(prices)):    # set up the range for the loop
+        for j in range(i + 1, len(prices)):         # nested loop, one step ahead of prices[i]
+            if prices[j] - prices[i] > max_profit:  # if the difference between the prices is greater than max_prof
+                max_profit = prices[j] - prices[i]  # we set the max profit at the difference.
+
+    return max_profit
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
