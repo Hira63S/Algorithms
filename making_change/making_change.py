@@ -4,17 +4,8 @@ import sys
 
 # let's do some base cases:
 
-total = 0
-count = 0
-sub_count = 1
-def making_change(amount, denominations):
 
-    test = [1] + [0] * amount
-    for i in denominations:
-        for p in range(i, amount +1):
-            test[p] = test[p] + test[p - i]
-    return test[amount]
-    
+
 
 
 
