@@ -9,11 +9,11 @@ def find_max_profit(prices):
 
     max_prof = [] # make a new array to save the profits in
 
-    for maximum in range(len(prices)):
-        for minimum in range(len(prices) - 1):
-            if maximum > minimum:
-                max_prof.append(prices[maximum] - prices[minimum])
-    max_profit = max(max_prof)
+    for maximum in range(len(prices)):              # the for loop triggered at first
+        for minimum in range(len(prices) - 1):      # then, we find the minimum
+            if maximum > minimum:                   # whenever max is greater than the mnimum, we append the profit
+                max_prof.append(prices[maximum] - prices[minimum]) # append the profit and then it returns to outer loop
+    max_profit = max(max_prof) #find the max profit and we get a result
 
     return max_profit
 
